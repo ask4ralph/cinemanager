@@ -1,0 +1,73 @@
+<%- model_class = Movie -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @movie.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rating) %>:</strong></dt>
+  <dd><%= @movie.rating %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:director) %>:</strong></dt>
+  <dd><%= @movie.director %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cast) %>:</strong></dt>
+  <dd><%= @movie.cast %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:details) %>:</strong></dt>
+  <dd><%= @movie.details %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reviews) %>:</strong></dt>
+  <dd><%= @movie.reviews %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
+  <dd><%= @movie.active %></dd>
+</dl>
+
+
+
+<h5> Cinemas Showing </h5>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:active) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movie.cinemas.each do |cinema| %>
+      <tr>
+        <td><%= link_to cinema.id, cinema_path(cinema) %></td>
+        <td><%= cinema.name %></td>
+        <td><%= cinema.active %></td>
+        <td><%=l cinema.created_at %></td>
+        <td>
+
+          <%= link_to t('.view', :default => t("helpers.links.view")),
+                      cinema_path(cinema), :class => 'btn btn-mini btn-info' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_cinema_path(cinema), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      cinema_path(cinema),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              movies_path, :class => 'btn btn-info'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_movie_path(@movie), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              movie_path(@movie),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

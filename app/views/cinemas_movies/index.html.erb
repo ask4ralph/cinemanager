@@ -1,0 +1,43 @@
+<%- model_class = CinemasMovie -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:movie_id) %></th>
+      <th><%= model_class.human_attribute_name(:cinema_id) %></th>
+      <th><%= model_class.human_attribute_name(:active) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cinemas_movies.each do |cinemas_movie| %>
+      <tr>
+        <td><%= link_to cinemas_movie.id, cinemas_movie_path(cinemas_movie) %></td>
+        <td><%= cinemas_movie.movie_name %></td>
+        <td><%= cinemas_movie.cinema_name %></td>
+        <td><%= cinemas_movie.active %></td>
+        <td><%=l cinemas_movie.created_at %></td>
+        <td>
+
+          <%= link_to t('.view', :default => t("helpers.links.view")),
+                      cinemas_movie_path(cinemas_movie), :class => 'btn btn-mini btn-info' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_cinemas_movie_path(cinemas_movie), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      cinemas_movie_path(cinemas_movie),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_cinemas_movie_path,
+            :class => 'btn btn-primary btn-success' %>

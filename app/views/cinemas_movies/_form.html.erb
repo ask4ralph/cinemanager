@@ -1,0 +1,68 @@
+<%= form_for @cinemas_movie, :html => { :class => 'form-horizontal' } do |f| %>
+<div class="control-group">
+    <%= f.label :movie_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:cinemas_movie, :movie_id, Movie.all, :id, :title, {:include_blank  => 'Select Movie'},:class=>"input-select")   %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cinema_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:cinemas_movie, :cinema_id, Cinema.all, :id, :name, {:include_blank  => 'Select Cinema'},:class=>"input-select")   %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :active, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :active, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mon, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mon, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tue, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tue, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :wed, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :wed, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :thu, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :thu, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fri, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fri, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sat, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sat, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sun, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sun, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cinemas_movies_path, :class => 'btn' %>
+  </div>
+<% end %>
