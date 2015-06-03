@@ -10,7 +10,7 @@ gem 'rails', '3.2.18'
 ###gem 'openssl'
 gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
-
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
