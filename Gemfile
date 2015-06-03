@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
+gem 'ruby', '2.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'activerecord-jdbcsqlite3-adapter'
+###gem 'activerecord-jdbcsqlite3-adapter'
 
-gem 'jruby-openssl'
+###gem 'jruby-openssl'
 gem 'json'
 
 # Gems used only for assets and not required
@@ -25,7 +26,7 @@ end
 #gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
-gem "activerecord-jdbcmysql-adapter", "~> 1.2.9"
+###gem "activerecord-jdbcmysql-adapter", "~> 1.2.9"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

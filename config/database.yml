@@ -27,7 +27,7 @@ staging:
 
 production:
   adapter: jdbcmysql
-  host: localhost  
+  host: ec2-50-19-213-178.compute-1.amazonaws.com
   database: cinemanager
   username: cinemanager
   password: cinemanager

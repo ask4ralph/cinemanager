@@ -75,7 +75,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
-     CinemasMovies.where(:movie_id => params[:id]).each do |cinemas_movies|
+     CinemasMovie.where(:movie_id => params[:id]).each do |cinemas_movies|
       cinemas_movies.destroy
     end
 
