@@ -14,3 +14,5 @@ A few of the APIs include:
 * Get Cinemas - https://cinemanager.herokuapp.com/cinemas.json 
 * Get Cinema by id - https://cinemanager.herokuapp.com/cinemas/1.json
 
+Stay tuned for more on this and the mobile app. Still yet to come up with a name for the app ;)
+
