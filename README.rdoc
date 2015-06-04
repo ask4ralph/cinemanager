@@ -9,8 +9,8 @@ It allows manual data entry of information such as currently showing movies, sho
 It exposes this information through RESTful APIs to the mobile app.
 
 A few of the APIs include:
-*Get Movies - https://cinemanager.herokuapp.com/movies.json 
-*Get Movie by id - https://cinemanager.herokuapp.com/movies/1.json
-*Get Cinemas - https://cinemanager.herokuapp.com/cinemas.json 
-*Get Cinema by id - https://cinemanager.herokuapp.com/cinemas/1.json
+* Get Movies - https://cinemanager.herokuapp.com/movies.json 
+* Get Movie by id - https://cinemanager.herokuapp.com/movies/1.json
+* Get Cinemas - https://cinemanager.herokuapp.com/cinemas.json 
+* Get Cinema by id - https://cinemanager.herokuapp.com/cinemas/1.json
 
