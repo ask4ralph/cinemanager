@@ -16,3 +16,5 @@ A few of the APIs include:
 
 Stay tuned for more on this and the mobile app. Still yet to come up with a name for the app ;)
 
+== Contribution
+Feel free to fork the project and submit suggested changes as Pull Requests.
